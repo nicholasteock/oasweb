@@ -1,0 +1,82 @@
+.datepicker-oas {
+	&:before {
+		content: "";
+		position: absolute;
+		top: -25px;
+		left: 0px;
+		width: 0;
+		height: 0;
+		border-bottom: 25px solid @grey;
+		border-right: 25px solid transparent;
+	}
+	&:focus {
+		outline: none;
+	}
+
+	background-color: #323234;
+	padding 		: 15px;
+	margin-top 		: 25px;
+	border-radius 	: 10px;
+	border-top-left-radius: 0;
+
+	.btn-oas {
+		margin-top: 10px;
+	}
+
+	li {
+		&:focus {
+			outline: none;
+		}
+	}
+
+	table {
+		border-collapse: collapse;
+		&:focus {
+			outline: none;
+		}
+	}
+
+	thead {
+		background-color: @black;
+
+		th {
+			.font(12, @white);
+			font-weight: bold;
+
+			.btn {
+				.font(26, @white);
+				font-weight: bold;
+				background-color: transparent;
+				border 			: none;
+
+				&:focus {
+					outline: none;
+				}
+			}
+		}
+	}
+
+	td {
+		.btn {
+			.font(17, @white);
+			background-color: #424242;
+			border-radius 	: 0;
+			border 			: 1px solid #777;
+			
+			&.active {
+				.font(17, @white);
+				font-weight: bold;
+				background-color: #1E90C2;
+				border: 1px solid #1E90C2;
+			}
+
+			&:focus {
+				outline: none;
+			}
+		}
+	}
+}
+
+.date-nav {
+	font-size: 1.5rem;
+}

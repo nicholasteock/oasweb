@@ -1,0 +1,31 @@
+<div class="row top-gap">
+
+	<!-- Add account button -->
+	<div class="col-xs-24 col-sm-7 col-md-5 col-lg-3 col-sm-offset-18 col-md-offset-18 col-lg-offset-21 top-gap" ng-hide="editNewAccount" >
+		<div>
+			<button type="button" class="btn-block btn-oas bold new-profile" ng-click="toggleNewAccount()"><span class="glyphicon glyphicon-plus"></span> ADD</button>
+		</div>
+	</div>
+
+	<div class="col-xs-24 col-sm-7 col-md-5 col-lg-3 col-sm-offset-18 col-md-offset-18 col-lg-offset-21 top-gap" ng-show="editNewAccount">
+		<div>
+			<button type="button" class="btn-block btn-oas bold new-profile" ng-click="toggleNewAccount()"><span class="glyphicon glyphicon-remove"></span> CANCEL</button>
+		</div>
+	</div>
+
+	<div class="col-xs-24 col-sm-24 col-md-17 col-md-offset-3 col-lg-14 col-lg-offset-5">
+		<div class="text-center settings-header">
+			USERS ACCOUNT MANAGEMENT
+		</div>
+		<div class="settings-body">
+
+			<!-- New account card -->
+			<div new-account class="accountcard row top-gap bottom-gap" ng-controller="NewaccountCtrl" ng-show="editNewAccount">
+			</div>
+
+			<!-- Existing Accounts -->
+			<div account-card class="accountcard row top-gap bottom-gap" ng-repeat="account in accountsService.accounts | toArray:false | orderBy : 'name'" ng-controller="AccountcardCtrl"></div>
+		</div>
+	</div>
+
+</div>

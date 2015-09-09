@@ -1,0 +1,19 @@
+.alphabet-list {
+	list-style  : none;
+	// padding-left: 0px;
+	text-align  : center;
+	
+	li {
+		height: 2.8vh;
+		.font(18, @grey);
+		font-weight 	: bold;
+		padding     	: 0.1vh 0;
+		border-right 	: 2px solid @blue;
+		cursor      	: pointer;
+		&.active {
+			.font(18, @white);
+			background-color: @blue;
+			border-bottom   : 3px solid @dark-blue;
+		}
+	}
+}

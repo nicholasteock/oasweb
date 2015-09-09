@@ -1,0 +1,61 @@
+/*****************************************************************************/
+/* TOPBAR TEMPLATE VIEW                                                            */
+/*****************************************************************************/
+
+.header {
+  // height: 10vh;
+  height: 40px;
+  padding-top: 1vh;
+}
+
+.topnav {
+  .topnav-option {
+    .font(20);
+    display: inline-block;
+    vertical-align: middle;
+    padding: 10px 0 5px 0;
+    margin-right: 15px;
+    cursor: pointer;
+
+    &.active {
+      border-bottom: 3px solid @blue;
+    }
+  }
+}
+
+.topbar-right {
+  height: 40px;
+}
+.topbar-avatar {
+  width: 35px;
+  height: auto;
+}
+.topbar-username {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1;
+  padding-left: 0.5rem;
+}
+.topbar-username .topbar-welcome {
+  .font(18);
+  font-weight: bold;
+}
+.topbar-username .topbar-name {
+  .font(24);
+  max-width     : 300px;
+  white-space   : nowrap;
+  overflow      : hidden;
+  text-overflow : ellipsis;
+}
+.topbar-icon {
+  font-size     : 2rem;
+  display       : inline-block;
+  vertical-align: middle;
+  margin-left   : 1rem;
+  padding-left  : 1rem;
+  border-left   : 2px solid @grey;
+
+  &.active {
+    color: @blue;
+  }
+}

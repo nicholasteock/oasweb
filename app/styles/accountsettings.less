@@ -1,0 +1,35 @@
+.settings-accounts {
+
+  .settings-body {
+    height: 70vh;
+    overflow: scroll;
+
+    .accountcard { 
+      background-color: @white;
+
+      .photo {
+        padding: 0;
+      }
+      .details {
+        .details-header {
+          .font(18, @blue);
+        }
+        .details-content {
+          .font(20);
+        }
+      }
+
+      input {
+        .font(18);
+
+        &:disabled {
+          background-color: #FFF;
+        }
+      }
+    }
+    .details-list {
+      list-style  : none;
+      padding-left: 0;
+    }
+  }
+}

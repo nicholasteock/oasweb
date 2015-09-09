@@ -1,0 +1,294 @@
+<!-- Print options (select checkbox) -->
+<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-center print-options">
+	<div class="checkbox-oas-round">
+		<label>
+			<input type="checkbox" ng-model="employee.selectedForPrinting">
+			<span ng-click="selectForPrinting(employee)"></span>
+		</label>
+	</div>
+	<div class="printIcon" ng-click="printSingle({{employee.id}})">
+		<img src="images/salary/print.png">
+	</div>
+</div>
+
+<!-- Monthly salary content -->
+<div class="col-xs-22 col-sm-22 col-md-22 col-lg-22 salary-container">
+	
+	<!-- Name and avatar thumbnail -->
+	<div class="col-xs-24 col-sm-24 col-md-24 col-lg-24 card-heading-container">
+		<img class="card-avatar-thumb" src="images/common/avatar.png" ng-src="{{employee.avatar_thumb_url}}">
+		<div class="bold card-name">
+	    	{{employee.name}}
+	  	</div>
+	</div>
+
+	<!-- Monthly salary content (Normal Mode) -->
+	<div class="col-xs-24 col-sm-24 col-md-24 col-lg-24 util-bg-dark-grey salary-details" ng-hide="exceed_overtime && salarymode==='stealth'">
+		<div class="row">
+			<!-- Salary breakdown (Left section of monthly salary card) -->
+			<div class="col-xs-10 col-sm-10 col-md-14 col-lg-11 util-bg-white salary-breakdown">
+				<div class="l-table top-gap bottom-gap">
+
+					<!-- Basic -->
+					<div class="l-row">
+						<div class="l-cell blue bold util-font-20 text-uppercase">Basic</div>
+						<div class="l-cell util-font-20 light-grey text-right">{{employee.basic_wage | currency}}</div>
+					</div>
+
+					<!-- Overtime -->
+					<div class="l-row">
+						<div class="l-cell blue bold util-font-20 text-uppercase">Overtime</div>
+						<div class="l-cell util-font-20 light-grey text-right">{{employee.overtime_wage | currency}}</div>
+					</div>
+
+					<!-- Skill -->
+					<div class="l-row">
+						<div class="l-cell blue bold util-font-20 text-uppercase">Skill</div>
+						<div class="l-cell util-font-20 light-grey text-right">{{employee.skill_wage | currency}}</div>
+					</div>
+
+					<!-- Meal Allowance -->
+					<div class="l-row">
+						<div class="l-cell blue bold util-font-20 text-uppercase">Meal Allowance</div>
+						<div class="l-cell util-font-20 light-grey text-right">{{employee.meal_allowance | nullzero | currency}}</div>
+					</div>
+
+					<!-- Project Allowance -->
+					<div class="l-row">
+						<div class="l-cell blue bold util-font-20 text-uppercase">Project Allowance</div>
+						<div class="l-cell util-font-20 light-grey text-right">{{employee.project_allowance | nullzero | currency}}</div>
+					</div>
+
+					<!-- Extra Money -->
+					<div class="l-row">
+						<div class="l-cell blue bold util-font-20 text-uppercase">Extra Money</div>
+						<div class="l-cell util-font-20 light-grey text-right">{{employee.extra_money | nullzero | currency}}</div>
+					</div>
+
+					<!-- External Work -->
+					<div class="l-row">
+						<div class="l-cell blue bold util-font-20 text-uppercase">External Work</div>
+						<div class="l-cell util-font-20 light-grey text-right">{{employee.external_work | nullzero | currency}}</div>
+					</div>
+
+					<!-- MC -->
+					<div class="l-row">
+						<div class="l-cell blue bold util-font-20 text-uppercase">MC</div>
+						<div class="l-cell util-font-20 light-grey text-right">{{employee.mc | nullzero | currency}}</div>
+					</div>
+
+					<!-- Safety -->
+					<div class="l-row">
+						<div class="l-cell blue bold util-font-20 text-uppercase">Safety</div>
+						<div class="l-cell util-font-20 light-grey text-right">{{employee.safety | nullzero | currency}}</div>
+					</div>
+
+					<!-- HP -->
+					<div class="l-row">
+						<div class="l-cell blue bold util-font-20 text-uppercase">HP</div>
+						<div class="l-cell util-font-20 light-grey text-right">{{employee.hp | nullzero | currency}}</div>
+					</div>
+
+					<!-- Additional -->
+					<div class="l-row">
+						<div class="l-cell blue bold util-font-20 text-uppercase">Additional</div>
+						<div class="l-cell util-font-20 light-grey text-right">{{employee.additional | nullzero | currency}}</div>
+					</div>
+
+					<!-- Transport Allowance -->
+					<div class="l-row">
+						<div class="l-cell blue bold util-font-20 text-uppercase">Transport Allowance</div>
+						<div class="l-cell util-font-20 light-grey text-right">{{employee.transport_allowance | nullzero | currency}}</div>
+					</div>
+
+					<!-- Total Salary -->
+					<div class="l-row">
+						<div class="l-cell">
+							<div class="top-gap util-font-20 text-uppercase bold">Total Salary</div>
+							<div class="util-font-60">{{employee.salary | currency}}</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<!-- Salary attendance breakdown (Right section of monthly salary card) -->
+			<div class="col-xs-14 col-sm-14 col-md-10 col-lg-13 salary-attendance">
+				
+				<!-- First sixteen days (Left column) -->
+				<div class="col-xs-12 col-sm-12 col-md-24 col-lg-12 util-no-padding top-gap bottom-gap gutter-right">
+					<div class="l-table">
+						<!-- Table header -->
+						<div class="l-row">
+							<div class="l-cell bold blue util-no-border text-uppercase">Date</div>
+							<div class="l-cell bold blue util-no-border text-uppercase">OT</div>
+							<div class="l-cell bold blue util-no-border text-uppercase">Project</div>
+						</div>
+
+						<!-- Table content -->
+						<div class="l-row" ng-repeat="day in employee.sixteenDays track by $index">
+							<div class="l-cell util-font-20 light-grey">{{employee.records[$index].day}}</div>
+							<div class="l-cell util-font-20 light-grey">{{employee.records[$index].overtime_hour_count}}</div>
+							<div class="l-cell util-font-20 text-uppercase">{{employee.records[$index].projects_abbrev_name}}</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Remaining days in month (Right column) -->
+				<div class="col-xs-12 col-sm-12 col-md-24 col-lg-12 util-no-padding top-gap bottom-gap">
+					<div class="l-table">
+						<!-- Table header -->
+						<div class="l-row hidden-md hidden-sm hidden-xs">
+							<div class="l-cell bold blue util-no-border text-uppercase">Date</div>
+							<div class="l-cell bold blue util-no-border text-uppercase">OT</div>
+							<div class="l-cell bold blue util-no-border text-uppercase">Project</div>
+						</div>
+
+						<!-- Table content -->
+						<div class="l-row" ng-repeat="day in employee.remainingDaysInMonth track by $index">
+							<div class="l-cell util-font-20 light-grey">{{employee.records[$index+16].day}}</div>
+							<div class="l-cell util-font-20 light-grey">{{employee.records[$index+16].overtime_hour_count}}</div>
+							<div class="l-cell util-font-20 text-uppercase">{{employee.records[$index+16].projects_abbrev_name}}</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<!-- Monthly salary content (Stealth Mode) -->
+	<div class="col-xs-24 col-sm-24 col-md-24 col-lg-24 util-bg-dark-grey salary-details" ng-show="exceed_overtime && salarymode==='stealth'">
+		<div class="row">
+			<!-- Salary breakdown (Left section of monthly salary card) -->
+			<div class="col-xs-10 col-sm-10 col-md-14 col-lg-11 util-bg-white salary-breakdown">
+				<div class="l-table top-gap bottom-gap">
+
+					<!-- Basic -->
+					<div class="l-row">
+						<div class="l-cell blue bold util-font-20 text-uppercase">Basic</div>
+						<div class="l-cell util-font-20 light-grey text-right">{{employee.basic_wage | currency}}</div>
+					</div>
+
+					<!-- Overtime -->
+					<div class="l-row">
+						<div class="l-cell blue bold util-font-20 text-uppercase">Overtime</div>
+						<div class="l-cell util-font-20 light-grey text-right">{{employee.capped_overtime_wage | currency}}</div>
+					</div>
+
+					<!-- Skill -->
+					<div class="l-row">
+						<div class="l-cell blue bold util-font-20 text-uppercase">Skill</div>
+						<div class="l-cell util-font-20 light-grey text-right">{{employee.skill_wage | currency}}</div>
+					</div>
+
+					<!-- Meal Allowance -->
+					<div class="l-row">
+						<div class="l-cell blue bold util-font-20 text-uppercase">Meal Allowance</div>
+						<div class="l-cell util-font-20 light-grey text-right">{{employee.meal_allowance | nullzero | currency}}</div>
+					</div>
+
+					<!-- Project Allowance -->
+					<div class="l-row">
+						<div class="l-cell blue bold util-font-20 text-uppercase">Project Allowance</div>
+						<div class="l-cell util-font-20 light-grey text-right">{{employee.project_allowance | nullzero | currency}}</div>
+					</div>
+
+					<!-- Extra Money -->
+					<div class="l-row">
+						<div class="l-cell blue bold util-font-20 text-uppercase">Extra Money</div>
+						<div class="l-cell util-font-20 light-grey text-right">{{employee.extra_money | nullzero | currency}}</div>
+					</div>
+
+					<!-- External Work -->
+					<div class="l-row">
+						<div class="l-cell blue bold util-font-20 text-uppercase">External Work</div>
+						<div class="l-cell util-font-20 light-grey text-right">{{employee.external_work | nullzero | currency}}</div>
+					</div>
+
+					<!-- MC -->
+					<div class="l-row">
+						<div class="l-cell blue bold util-font-20 text-uppercase">MC</div>
+						<div class="l-cell util-font-20 light-grey text-right">{{employee.mc | nullzero | currency}}</div>
+					</div>
+
+					<!-- Safety -->
+					<div class="l-row">
+						<div class="l-cell blue bold util-font-20 text-uppercase">Safety</div>
+						<div class="l-cell util-font-20 light-grey text-right">{{employee.safety | nullzero | currency}}</div>
+					</div>
+
+					<!-- HP -->
+					<div class="l-row">
+						<div class="l-cell blue bold util-font-20 text-uppercase">HP</div>
+						<div class="l-cell util-font-20 light-grey text-right">{{employee.hp | nullzero | currency}}</div>
+					</div>
+
+					<!-- Additional -->
+					<div class="l-row">
+						<div class="l-cell blue bold util-font-20 text-uppercase">Additional</div>
+						<div class="l-cell util-font-20 light-grey text-right">{{employee.additional | nullzero | currency}}</div>
+					</div>
+
+					<!-- Transport Allowance -->
+					<div class="l-row">
+						<div class="l-cell blue bold util-font-20 text-uppercase">Transport Allowance</div>
+						<div class="l-cell util-font-20 light-grey text-right">{{employee.transport_allowance | nullzero | currency}}</div>
+					</div>
+
+					<!-- Total Salary -->
+					<div class="l-row">
+						<div class="l-cell">
+							<div class="top-gap util-font-20 text-uppercase bold">Total Salary</div>
+							<div class="util-font-60">{{employee.capped_salary | currency}}</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<!-- Salary attendance breakdown (Right section of monthly salary card) -->
+			<div class="col-xs-14 col-sm-14 col-md-10 col-lg-13 salary-attendance">
+				
+				<!-- First sixteen days (Left column) -->
+				<div class="col-xs-12 col-sm-12 col-md-24 col-lg-12 util-no-padding top-gap bottom-gap gutter-right">
+					<div class="l-table">
+						<!-- Table header -->
+						<div class="l-row">
+							<div class="l-cell bold blue util-no-border text-uppercase">Date</div>
+							<div class="l-cell bold blue util-no-border text-uppercase">OT</div>
+							<div class="l-cell bold blue util-no-border text-uppercase">Project</div>
+						</div>
+
+					<!-- Table content -->
+						<div class="l-row" ng-repeat="day in employee.sixteenDays track by $index">
+							<div class="l-cell util-font-20 light-grey">{{stealthEntries.records[$index].day}}</div>
+							<div class="l-cell util-font-20 light-grey">{{stealthEntries.records[$index].overtime_hour_count}}</div>
+							<div class="l-cell util-font-20 text-uppercase">{{stealthEntries.records[$index].projects_abbrev_name}}</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Remaining days in month (Right column) -->
+				<div class="col-xs-12 col-sm-12 col-md-24 col-lg-12 util-no-padding top-gap bottom-gap">
+					<div class="l-table">
+						<!-- Table header -->
+						<div class="l-row hidden-md hidden-sm hidden-xs">
+							<div class="l-cell bold blue util-no-border text-uppercase">Date</div>
+							<div class="l-cell bold blue util-no-border text-uppercase">OT</div>
+							<div class="l-cell bold blue util-no-border text-uppercase">Project</div>
+						</div>
+
+						<!-- Table content -->
+						<div class="l-row" ng-repeat="day in employee.remainingDaysInMonth track by $index">
+							<div class="l-cell util-font-20 light-grey">{{stealthEntries.records[$index+16].day}}</div>
+							<div class="l-cell util-font-20 light-grey">{{stealthEntries.records[$index+16].overtime_hour_count}}</div>
+							<div class="l-cell util-font-20 text-uppercase">{{stealthEntries.records[$index+16].projects_abbrev_name}}</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>

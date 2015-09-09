@@ -1,0 +1,353 @@
+.late:before {
+	content: url(../images/attendance/late.png);
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin-top: 5px;
+}
+.late-tile:before {
+	content: url(../images/attendance/late_tile.png);
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin-top: 3px;
+}
+.dark-blue-bar {
+	.background-image('attendance/dark_blue_tile.png');	
+}
+.blue-bar {
+	.background-image('attendance/blue_tile.png');	
+}
+.yellow-bar {
+	.background-image('attendance/yellow_tile.png');
+}
+.green-bar {
+	.background-image('attendance/green_tile.png');
+}
+.purple-bar {
+	.background-image('attendance/purple_tile.png');
+}
+.red-bar {
+	.background-image('attendance/red_tile.png');
+}
+
+.attendance-legend {
+	background-color: #d7d7d7;
+	display: inline-block;
+	padding: 0.5rem 1rem;
+	float: right;
+
+	.color {
+		display: inline-block;
+		height: 1.5rem;
+		width: 2rem;
+		vertical-align: middle;
+		border-radius: 40%;
+	}
+
+	.late-icon {
+		height: 1.5rem;
+		width: 2rem;
+		vertical-align: top;
+	}
+
+	.desc {
+		display: inline-block;
+		font-size: 1rem;
+		vertical-align: middle;
+		font-weight: bold;
+	}
+}
+
+.manpower-attendance {
+	.stage {
+		margin-top  : 10px;
+		// height      : 70vh;
+		height      : 65vh;
+		overflow: scroll;
+	}
+
+	.attendance-date {
+		.font(20);
+		outline: none;
+		border: none;
+		background-color: transparent;
+		width: 15rem;
+	}
+
+	.attendance-rightpanel {
+		margin-left: -15px;
+	}
+
+	.attendance-projectselect {
+		margin-top: 10px;
+		.btn-oas {
+			.font(18);
+		}
+		li {
+			.font(18);
+		}
+	}
+
+	.timeline {
+		// width: 100%;
+		padding: 0;
+		// width: 107%;
+		.font(18, @grey);
+		.time {
+			display: inline-block;
+			width: 4%;
+			// width: 3.8%;
+		}
+	}
+
+	.timegrid {
+		position: absolute;
+		left: -7px;
+
+		img {
+			width: 100%;
+			z-index: 1;
+		}
+	}
+
+	.attendance-details {
+		display: table;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		background-color: #c8c8c8;
+		min-height: 35px;
+
+		.attendance-entry {
+			.font(16, @white);
+			display: inline-block;
+			cursor: pointer;
+			// border-radius: 20px;
+
+			&.active {
+				border: 2px solid @white;
+			}
+
+			&.disabled {
+				opacity: 0;
+				pointer-events: none;
+			}
+
+			.attendance-projectname {
+				width: 100%;
+				overflow: hidden;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				padding-top: 3px;
+				padding-bottom: 3px;
+			}
+		}
+	}
+
+	.attendance-info {
+		&.left:before {
+			content: "";
+			position: absolute;
+			top: -15px;
+			left: 0px;
+			width: 0;
+			height: 0;
+			border-bottom: 15px solid @grey;
+			border-right: 15px solid transparent;
+		}
+
+		&.right:before {
+			content: "";
+			position: absolute;
+			top: -15px;
+			right: 0px;
+			width: 0;
+			height: 0;
+			border-bottom: 15px solid @grey;
+			border-left: 15px solid transparent;
+		}
+
+		display: inline-block;
+		background-color: @grey;
+		position: relative;
+		margin-top: 5px;
+		height: 7rem;
+		width: 45%;
+		padding: 5px;
+	}
+
+	.attendance-photo {
+		display: inline-block;
+		height: 100%;
+		width: 6rem;
+
+		img {
+			height: 100%;
+			width: auto;
+		}
+	}
+
+	.attendanceinfo-details {
+		display: inline-block;
+		vertical-align: top;
+		.font(16, @white);
+
+		.name {
+			width: 5rem;
+			display: inline-block;
+			vertical-align: top;
+		}
+		.value {
+			width: 7rem;
+			display: inline-block;
+		}
+	}
+
+	.attendanceinfo-location {
+		display: inline-block;
+		vertical-align: top;
+		padding-left: 30px;
+	}
+
+	.attendanceinfo-options {
+		display: inline-block;
+		float: right;
+		padding-left: 30px;
+		cursor: pointer;
+	}
+}
+
+.page-nav {
+	background-color: @blue;
+	border-radius: 20px;
+	padding: 3px;
+	.font(16, @white);
+}
+
+.summary-container {
+	.font(20, white);
+	height: 50px;
+	background-color: @black;
+	padding: 5px;
+}
+
+.summary-legend {
+	background-color: #d7d7d7;
+	display: inline-block;
+	padding: 0 1rem;
+	margin-right: 2rem;
+	float: right;
+
+	.color {
+		display: inline-block;
+		width: 2rem;
+		height: 1.5rem;
+		border-radius: 40%;
+		vertical-align: middle;
+	}
+
+	.late-icon {
+		height: 1.5rem;
+		width: 2rem;
+		vertical-align: top;
+	}
+
+	.desc {
+		display: inline-block;
+		font-size: 1rem;
+		vertical-align: middle;
+		font-weight: bold;
+
+	}
+}
+
+.summary-avatar-thumb {
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+}
+
+.summary-entries-container {
+	width: 90%;
+	height: 70vh;
+	overflow: scroll;
+	white-space: nowrap;
+	display: inline-block;
+}
+
+.summary-date {
+	.font(20);
+	display: inline-block;
+	width: 10%;
+	text-align: center; 
+}
+
+.summary-entry {
+	display: inline-block;
+	width: 45%;
+	margin-right: 0.5rem;
+
+	.heading {
+		padding: 0.5rem 1rem;
+	}
+
+	.content {
+		background-color: @grey;
+		padding: 0.3rem 1rem;
+		height: 10rem;
+	}
+
+	.leave {
+		line-height: 10rem;
+	}
+
+	.entry-details {
+		display: inline-block;
+		vertical-align: top;
+		.font(16, @white);
+		margin-left: 1rem;
+		margin-right: 1rem;
+
+		.name {
+			width: 5rem;
+			display: inline-block;
+			vertical-align: top;
+		}
+		.value {
+			width: 7rem;
+			display: inline-block;
+			overflow: hidden;
+			white-space: normal;
+		}
+	}
+
+	.entry-photo {
+		height: 100%;
+		width: 9.5rem;
+		display: inline-block;
+
+		img {
+			height: 100%;
+		}
+	}
+}
+
+.summary-overtime {
+	display: inline-block;
+	width: 10%;
+	height: 70vh;
+	float: right;
+	background-color: @light-grey;
+	text-align: center;
+	border-bottom-right-radius: 30px;
+	padding-top: 5rem;
+
+	.overtime-hour {
+		background-color: #e3be0d;
+		width: 5rem;
+		height: 5rem;
+		line-height: 5rem;
+		border-radius: 50%;
+		display: inline-block;
+	}
+}

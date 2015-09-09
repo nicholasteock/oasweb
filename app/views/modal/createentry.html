@@ -1,0 +1,81 @@
+<!-- Modal Header -->
+<div class="modal-header">
+	CREATE ENTRY
+	<span class="pull-right glyphicon glyphicon-remove" ng-click="cancel()"></span>
+</div>
+
+<!-- Modal body -->
+<div class="modal-body">
+
+	<!-- Entry type dropdown -->
+	<div class="row">
+		<div class="col-xs-12 col-xs-offset-6 col-sm-12 col-sm-offset-6 col-md-12 col-md-offset-6 col-lg-12 col-lg-offset-6">
+			<div class="blue bold text-uppercase text-center">Type of entry</div>
+			<div class="dropdown dropdown-oas" dropdown>
+				<button type="button" class="dropdown-toggle btn-block btn-oas" dropdown-toggle>{{selectedEntryType}}<span class="pull-right glyphicon glyphicon-chevron-down"></span></button>
+				<ul class="dropdown-menu">
+					<li class="text-uppercase bold">
+						<a href ng-click="chooseEntryType(1)">PROJECT</a>
+					</li>
+					<li class="text-uppercase bold">
+						<a href ng-click="chooseEntryType(3)">LEAVE</a>
+					</li>
+					<li class="text-uppercase bold">
+						<a href ng-click="chooseEntryType(2)">MEDICAL LEAVE</a>
+					</li>
+					<li class="text-uppercase bold">
+						<a href ng-click="chooseEntryType(4)">PUBLIC HOLIDAY</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<!-- Project name dropdown -->
+	<div class="row">
+		<div class="col-xs-12 col-xs-offset-6 col-sm-12 col-sm-offset-6 col-md-12 col-md-offset-6 col-lg-12 col-lg-offset-6">
+			<div class="blue bold text-uppercase text-center">Project Name</div>
+			<div class="dropdown dropdown-oas" dropdown>
+				<button type="button" class="dropdown-toggle text-uppercase btn-block btn-oas" dropdown-toggle>{{selectedProjectName}}<span class="pull-right glyphicon glyphicon-chevron-down"></span></button>
+				<ul class="dropdown-menu">
+					<li ng-repeat="project in projects">
+						<a href ng-click="chooseProject(project.id)">{{project.name}}</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<!-- Entry information -->
+	<div class="row">
+		<!-- Remarks -->
+		<div class="col-xs-24 col-sm-24 col-md-24 col-lg-24" ng-hide="isSelectedEntryType(1)">
+			<textarea rows="8" class="util-bg-dark-grey textarea-oas" ng-model="entryRemarks"></textarea>
+		</div>
+
+		<!-- Sign in/out details -->
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"  ng-show="isSelectedEntryType(1)">
+			<div class="blue bold text-uppercase text-center lg">Sign In</div>
+			<div class="blue bold text-uppercase text-left">Address</div>
+			<textarea rows="5" class="util-bg-dark-grey textarea-oas" disabled="disabled">{{selectedProjectAddress}}</textarea>
+			<div class="blue bold text-uppercase text-left">Sign In</div>
+			<input type="text" class="util-bg-dark-grey input-oas" ng-model="checkinTime">
+		</div>
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" ng-show="isSelectedEntryType(1)">
+			<div class="blue bold text-uppercase text-center lg">SIGN OUT</div>
+			<div class="blue bold text-uppercase text-left">Address</div>
+			<textarea rows="5" class="util-bg-dark-grey textarea-oas" disabled="disabled">{{selectedProjectAddress}}</textarea>
+			<div class="blue bold text-uppercase text-left">Sign Out</div>
+			<input type="text" class="util-bg-dark-grey input-oas" ng-model="checkoutTime">
+		</div>
+
+	</div>
+</div>
+
+<!-- Modal footer -->
+<div class="modal-footer">
+	<p class="text-center text-danger">{{errorMessage}}</p>
+	<p><button class="btn-block btn-oas btn-lg text-uppercase" ng-click="ok()">
+		<span class="glyphicon glyphicon-floppy-disk"></span>&nbsp; Save
+	</button></p>
+</div>

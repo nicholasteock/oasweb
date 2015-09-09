@@ -1,0 +1,110 @@
+.projects-section {
+	padding: 0;
+}
+
+.projects-sidepanel {
+	width: 15vw;
+	height: 100vh;
+	background-color: #FFF;
+	padding: 0;
+	float: left;
+}
+
+.projectslist-sidepanel {
+	width: 15vw;
+	background-color: white;
+	height: 100vh;
+	border-left: 1px solid #dddddd;
+	position: absolute;
+	top: 0;
+	left: 15vw;
+	z-index: 4;
+	overflow: scroll;
+}
+
+.projectslist-sidepanel .list-group-item {
+	border-radius: 0 !important;
+	border-left: none;
+	border-right: none;
+}
+
+.projects-mainpanel {
+	width: 80vw;
+	height: 100vh;
+	overflow: hidden;
+	float: left;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.projects-sidepanel-top {
+	height: 7vh;
+	padding: 2vh;
+	background-color: #d7d7d7;
+}
+
+.projects-sidepanel-middle {
+	padding: 1vh 2vh;
+	background-color: @black;
+	.font(20, @white);
+}
+
+.projects-sidepanel-bottom {
+	padding: 1vh;
+}
+
+.laborcost-date {
+	.font(22);
+	outline: none;
+	border: none;
+	background-color: transparent;
+	vertical-align: middle;
+	line-height: 2;
+}
+
+.projects-legend {
+	display: table;
+	background-color: #d7d7d7;
+	padding: 0 5px;
+}
+
+.legend-item {
+	display: table-cell;
+
+	.color {
+		display: inline-block;
+		height: 1.5rem;
+		width: 2rem;
+		vertical-align: middle;
+		border-radius: 1rem;
+	}
+
+	.legend {
+		.font(14);
+		display: inline-block;
+		padding: 5px;
+	}
+}
+
+.blue-bar {
+	.background-image('attendance/blue_tile.png');	
+}
+.yellow-bar {
+	.background-image('attendance/yellow_tile.png');
+}
+
+.laborcost-chart {
+	height: 75vh;
+}
+.laborcost-tooltip-title {
+	.font(16, @white);
+	font-weight: bold;
+}
+.laborcost-tooltip-value {
+	.font(40);
+}
+
+.project-form-error {
+	height: 10px;
+	margin-bottom: 5px;
+}

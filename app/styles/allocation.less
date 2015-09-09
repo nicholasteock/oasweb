@@ -1,0 +1,86 @@
+.manpower-allocation {
+
+	.stage {
+		margin-top  : 7vh;
+		height      : 83vh;
+		overflow 	: scroll;
+	}
+
+	.allocation-card {
+		// background-color: @black;
+	}
+
+	.allocation-date {
+		.font(25.6);
+		outline: none;
+		border: none;
+		background-color: transparent;
+		vertical-align: middle;
+		line-height: 2;
+	}
+
+	.allocation-tabledates {
+		position: fixed;
+		width: 78.5vw;
+		top: 13vh;
+		z-index: 1;
+		margin-left: 21rem;
+
+		table {
+			margin-bottom: 0;
+		}
+		td {
+			border: none;
+			width: 3.5rem;
+		}
+	}
+
+	.allocation-projectname {
+		background-color: #333;
+		vertical-align: middle;
+		width: 15rem;
+		.font(25.2, white);
+	}
+
+	.allocation-table {
+		width: 100%;
+		float: left;
+		display: inline-block;
+
+		td {
+			border-top: none;
+		}
+	}
+
+	.allocation-data {
+		padding: 0;
+		max-width: 20rem;
+		table {
+			margin-bottom: 0;
+			background-color: transparent;
+		}
+		td {
+			font-size: 1.3rem;
+			padding: 0 0.1rem;
+			border-top: none;
+			width: 3vw;
+		}
+	}
+
+	.allocation-nationality {
+		width: 5rem;
+		overflow: hidden;
+	}
+
+	.allocation-entry {
+		background-color: @dark-grey;
+		padding: 0.1rem 0.2rem;
+		border: 0.3rem solid @light-grey;
+	}
+
+	.allocation-total {
+		background-color: #135d7f;
+		padding: 0.3rem 0.7rem;
+		border: 0.3rem solid @blue;
+	}
+}

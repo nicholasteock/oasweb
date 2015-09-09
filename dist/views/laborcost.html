@@ -1,0 +1,30 @@
+<div class="row top-gap bottom-gap" ng-show="selectedProject"> <!-- Labor Cost Datepicker --> <div class="col-xs-24 col-sm-24 col-md-8 col-lg-8 col-md-offset-8 col-lg-offset-8 text-center text-uppercase bold laborcost-date"> <span> <span class="glyphicon glyphicon-chevron-left date-nav" ng-click="shiftMonth(-1)"></span> <input type="text" class="bold text-center laborcost-date" datepicker-popup="MMMM yyyy" ng-model="laborcostDate" name="laborcostDate" is-open="datepickers.laborcostDate" datepicker-options="dateOptions" ng-required="true" ng-click="open($event)" close-text="Close"> <span class="glyphicon glyphicon-chevron-right date-nav" ng-click="shiftMonth(1)"></span> </span> </div> <div class="col-xs-24 col-sm-24 col-md-8 col-lg-8 projects-rightpanel"> <!-- Legend Bar --> <div class="pull-right projects-legend"> <div class="legend-item"> <div class="color blue-bar"></div> <div class="bold legend">NORMAL WORKING HOURS</div> </div> <div class="legend-item"> <div class="color yellow-bar"></div> <div class="bold legend">OT WORKING HOURS</div> </div> </div> <!-- <div class='l-row'>
+			<div class="l-cell">
+				<div class="color late-bar"></div>
+				<div class="">LATE</div>
+			</div>
+			<div class="l-cell">
+				<div class="color dark-blue-bar"></div>
+				<div class="">OT TILL 4AM PREVIOUS DAY</div>
+			</div>
+			<div class="l-cell">
+				<div class="color blue-bar"></div>
+				<div class="">NORMAL WORKING HOURS</div>
+			</div>
+			<div class="l-cell">
+				<div class="color yellow-bar"></div>
+				<div class="">OT WORKING HOURS</div>
+			</div>
+			<div class="l-cell">
+				<div class="color green-bar"></div>
+				<div class="">MC/LEAVE</div>
+			</div>
+			<div class="l-cell">
+				<div class="color purple-bar"></div>
+				<div class="">PUBLIC HOLIDAY</div>
+			</div>
+			<div class="l-cell">
+				<div class="color red-bar"></div>
+				<div class="">INCOMPLETE ENTRIES/ABSENTEES</div>
+			</div>
+		</div> --> </div> </div> <div class="row top-gap" ng-show="selectedProject"> <div class="center-block"> <div class="text-center util-font-20 bold">TOTAL LABOR COST</div> <div class="text-center util-font-60">{{totalCost | currency}}</div> </div> </div> <highchart config="chartConfig" class="laborcost-chart" ng-show="selectedProject"></highchart>

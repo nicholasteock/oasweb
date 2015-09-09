@@ -1,0 +1,50 @@
+/*****************************************************************************/
+/* SIDEBAR TEMPLATE VIEW                                                            */
+/*****************************************************************************/
+
+.sidebar {
+  .background-image('sidebar/sidebar.png');
+  position: fixed;
+  float     : left;
+  display   : inline-block;
+  width     : @sidebarWidth;
+  height    : 100vh;
+  overflow  : hidden;
+
+  .sidebar-nav {
+    .font(20, #6d7277);
+    width         : @sidebarWidth;
+    height        : auto;
+    padding       : 15px 0px;
+    cursor        : pointer;
+    border-bottom : 1px solid #c4c4c4;
+
+    &.active {
+      background-color: @blue;
+      color           : @white;
+    }
+  }
+
+  .home {
+    .logo {
+      width   : 35px;
+      height  : auto;
+    }
+  }
+
+  .manpower {
+    .logo {
+      width         : 20px;
+      height        : auto;
+      margin-bottom : 5px;
+    }
+  }
+
+  .projects {
+    .logo {
+      width         : 20px;
+      height        : auto;
+      margin-bottom : 5px;
+    }
+  }
+}

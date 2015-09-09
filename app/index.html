@@ -1,0 +1,138 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title>OAS Mobility System</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/modules.css">
+    <!-- endbuild -->
+  </head>
+  <body ng-app="oasApp">
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <div ng-view=""></div>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+    <!-- <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-XXXXX-X');
+      ga('send', 'pageview');
+    </script> -->
+
+    <!-- build:js(.) scripts/oldieshim.js -->
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.js"></script>
+    <![endif]-->
+    <!-- endbuild -->
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/less/dist/less.js"></script>
+    <script src="bower_components/ng-file-upload/angular-file-upload.js"></script>
+    <script src="bower_components/ng-file-upload-shim/angular-file-upload-shim.js"></script>
+    <script src="bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js"></script>
+    <script src="bower_components/highcharts-ng/dist/highcharts-ng.js"></script>
+    <script src="bower_components/angular-toArrayFilter/toArrayFilter.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/manpower.js"></script>
+        <script src="scripts/controllers/projects.js"></script>
+        <script src="scripts/controllers/login.js"></script>
+        <script src="scripts/controllers/dashboard.js"></script>
+        <script src="scripts/controllers/profiles.js"></script>
+        <script src="scripts/controllers/allocation.js"></script>
+        <script src="scripts/controllers/salary.js"></script>
+        <script src="scripts/controllers/attendance.js"></script>
+        <script src="scripts/controllers/settings.js"></script>
+        <script src="scripts/controllers/generalsettings.js"></script>
+        <script src="scripts/services/auth_events.js"></script>
+        <script src="scripts/services/user_roles.js"></script>
+        <script src="scripts/services/authservice.js"></script>
+        <script src="scripts/services/manpowerservice.js"></script>
+        <script src="scripts/services/settingsservice.js"></script>
+        <script src="scripts/controllers/personalsettings.js"></script>
+        <script src="scripts/controllers/accountsettings.js"></script>
+        <script src="scripts/controllers/modal/forgotpassword.js"></script>
+        <script src="scripts/controllers/modal/generalsettingsmodal.js"></script>
+        <script src="scripts/controllers/modal/deleteconfirmation.js"></script>
+        <script src="scripts/directives/matchwith.js"></script>
+        <script src="scripts/controllers/accountcard.js"></script>
+        <script src="scripts/controllers/profilecard.js"></script>
+        <script src="scripts/services/http_params.js"></script>
+        <script src="scripts/services/session.js"></script>
+        <script src="scripts/controllers/salarycarddaily.js"></script>
+        <script src="scripts/controllers/salarycardmonthly.js"></script>
+        <script src="scripts/directives/alphabetlist.js"></script>
+        <script src="scripts/filters/nulldash.js"></script>
+        <script src="scripts/controllers/newprofile.js"></script>
+        <script src="scripts/filters/isforeigner.js"></script>
+        <script src="scripts/services/attendanceservice.js"></script>
+        <script src="scripts/controllers/attendancecard.js"></script>
+        <script src="scripts/controllers/attendanceentry.js"></script>
+        <script src="scripts/controllers/modal/createentry.js"></script>
+        <script src="scripts/services/projectsservice.js"></script>
+        <script src="scripts/controllers/modal/createentryconfirmation.js"></script>
+        <script src="scripts/controllers/attendanceinfo.js"></script>
+        <script src="scripts/controllers/modal/editentry.js"></script>
+        <script src="scripts/services/salaryservice.js"></script>
+        <script src="scripts/filters/nullzero.js"></script>
+        <script src="scripts/controllers/modal/errormodal.js"></script>
+        <script src="scripts/controllers/modal/attendancelocationmodal.js"></script>
+        <script src="scripts/controllers/modal/createproject.js"></script>
+        <script src="scripts/directives/validators.js"></script>
+        <script src="scripts/services/bingmaps.js"></script>
+        <script src="scripts/services/allocationservice.js"></script>
+        <script src="scripts/directives/dateinput.js"></script>
+        <script src="scripts/controllers/laborcost.js"></script>
+        <script src="scripts/controllers/materialscost.js"></script>
+        <script src="scripts/controllers/projectscost.js"></script>
+        <script src="scripts/services/printer.js"></script>
+        <script src="scripts/controllers/materialsettings.js"></script>
+        <script src="scripts/services/materialsservice.js"></script>
+        <script src="scripts/controllers/materialcostitem.js"></script>
+        <script src="scripts/controllers/accessorycostitem.js"></script>
+        <script src="scripts/services/costsummaryservice.js"></script>
+        <script src="scripts/services/accountsservice.js"></script>
+        <script src="scripts/controllers/newaccount.js"></script>
+        <script src="scripts/controllers/accessorysettings.js"></script>
+        <script src="scripts/services/apihandler.js"></script>
+        <script src="scripts/controllers/modal/materialcostsummarymodal.js"></script>
+        <script src="scripts/controllers/modal/accessorycostsummarymodal.js"></script>
+        <script src="scripts/controllers/modal/attendancesummarymodal.js"></script>
+        <script src="scripts/controllers/modal/attendancesummaryentry.js"></script>
+        <script src="scripts/services/stealthentries.js"></script>
+        <!-- endbuild -->
+
+        <script src="http://code.highcharts.com/highcharts.src.js"></script>
+</body>
+</html>

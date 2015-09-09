@@ -1,0 +1,106 @@
+.new-profile {
+	.font(18, @white);
+	padding : 10px;
+}
+.stage {
+	margin-top  : 10px;
+	height      : 75vh;
+	overflow: scroll;
+}
+.profile-form-field {
+	white-space: nowrap;
+	.font(24, @blue);
+}
+.profile-value {
+	.font(16);
+	a {
+		.font(16);
+	}
+}
+.profile-form-group {
+	border: 1px solid @light-grey;
+	border-bottom: none;
+	padding: 1px 3px;
+	height: auto;
+
+	input:disabled, select:disabled {
+		background-color: #FFF;
+	}
+}
+.profile-form-error {
+	height: 10px;
+	margin-bottom: 5px;
+	white-space: nowrap;
+}
+.profile-form-table {
+	th {
+		padding: 0 !important;
+		.font(24, @blue);
+		font-weight: bold;
+		width: 50%;
+		border: none !important;
+	}
+	td {
+		.font(22);
+		padding: 0 3px !important;
+		text-transform: uppercase;
+		border: 1px solid @light-grey;
+	}
+	.soc-skill-title {
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		max-width: 13rem;
+	}
+}
+.profile-documentname {
+	width: 90%;
+	overflow: hidden;
+	float: left;
+	display: inline;
+	white-space: nowrap;
+}
+.profile-documentremove {
+	width: 10%;
+	float: right;
+}
+.profile-form-upload {
+	.profile-form-field {
+		line-height: 2;
+		padding-bottom: 5px;
+		border-bottom: 1px solid @light-grey;
+		margin-bottom: 5px;
+	}
+
+	.btn-oas {
+		padding: 3px 9px;
+		font-size: 0.7rem;
+	}
+}
+
+// Styles for upload image button
+.add-avatar-button {
+	width: 20px;
+	height: 20px;
+	overflow: hidden;
+	position: absolute;
+	top: 3px;
+	right: 3px;
+}
+.add-avatar-button::-webkit-file-upload-button {
+	visibility: hidden;
+}
+.add-avatar-button::before {
+	content: '';
+	display: inline-block;
+	.background-image('icons/link_icon.png');
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+}
+.add-avatar-button:hover::before {
+	opacity: 0.8;
+}
+.add-avatar-button:active::before {
+	outline: none !important;
+}

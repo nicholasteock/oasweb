@@ -1,0 +1,48 @@
+<!-- Material name -->
+<td class="util-bg-white">{{item.material.name}}</td>
+
+<!-- Purchase Date -->
+<td ng-class="{'util-bg-lightestgrey': editMaterials, 'util-bg-white': !editMaterials}"><input type="date" ng-model="item.purchase_date" ng-disabled="!editMaterials"/></td>
+
+<!-- Purchase Order -->
+<td ng-class="{'util-bg-lightestgrey': editMaterials, 'util-bg-white': !editMaterials}"><input type="text" ng-model="item.purchase_order" ng-disabled="!editMaterials"/></td>
+
+<!-- Delivery Date -->
+<td ng-class="{'util-bg-lightestgrey': editMaterials, 'util-bg-white': !editMaterials}"><input type="date" ng-model="item.delivery_date" ng-disabled="!editMaterials"/></td>
+
+<!-- Delivery Order -->
+<td ng-class="{'util-bg-lightestgrey': editMaterials, 'util-bg-white': !editMaterials}"><input type="text" ng-model="item.delivery_order" ng-disabled="!editMaterials"/></td>
+
+<!-- Invoice Date -->
+<td ng-class="{'util-bg-lightestgrey': editMaterials, 'util-bg-white': !editMaterials}"><input type="date" ng-model="item.invoice_date" ng-disabled="!editMaterials"/></td>
+
+<!-- Invoice Number -->
+<td ng-class="{'util-bg-lightestgrey': editMaterials, 'util-bg-white': !editMaterials}"><input type="text" ng-model="item.invoice_number" ng-disabled="!editMaterials"/></td>
+
+<!-- Supplier -->
+<td class="util-bg-white">{{item.material.supplier}}</td>
+
+<!-- Color -->
+<td class="util-bg-white">{{item.material.color}}</td>
+
+<!--Price -->
+<td ng-class="{'util-bg-lightestgrey': editMaterials, 'util-bg-white': !editMaterials}"><input type="text" ng-model="item.price" ng-disabled="!editMaterials"/></td>
+	
+<!-- Quantity -->
+<td ng-class="{'util-bg-lightestgrey': editMaterials, 'util-bg-white': !editMaterials}"><input type="text" ng-model="item.quantity" ng-disabled="!editMaterials"/></td>
+
+<!-- Total -->
+<td class="util-bg-white">{{item.price * item.quantity | currency}}</td>
+
+<!-- Remarks -->
+<td ng-class="{'util-bg-lightestgrey': editMaterials, 'util-bg-white': !editMaterials}"><input type="text" ng-model="item.remark" ng-disabled="!editMaterials"/></td>
+
+<!-- Buttons -->
+<td class="last">
+	<div class="text-right" ng-hide="editMaterials" ng-click="deleteMaterialCost({{item.id}})">
+		<img class="icon-oas" src="images/icons/trash_icon.png">
+	</div>
+	<div class="text-right" ng-show="editMaterials" ng-click="updateMaterialCost(item)">
+		<img class="icon-oas" src="images/icons/save_icon.png">
+	</div>
+</td>

@@ -1,0 +1,421 @@
+.materials-table, .accessories-table {
+	table-layout: fixed;
+}
+
+.materials-table > thead > tr > th {
+	padding: 10px;
+	vertical-align: middle;
+	border: 2px solid #dddddd;
+	background-color: #333;
+	text-align: center;
+
+	&:nth-child(1) {
+		width: 12%;
+	}
+	&:nth-child(2) {
+		width: 14%;
+	}
+	&:nth-child(3) {
+		width: 14%;
+	}
+	&:nth-child(4) {
+		width: 14%;
+	}
+	&:nth-child(5) {
+		width: 7%;
+	}
+	&:nth-child(6) {
+		width: 6%;
+	}
+	&:nth-child(7) {
+		width: 5%;
+	}
+	&:nth-child(8) {
+		width: 5%;
+	}
+	&:nth-child(9) {
+		width: 6%;
+	}
+	&:nth-child(10) {
+		width: 11%;
+	}
+	&:nth-child(11) {
+		width: 6%;
+	}
+}
+
+.materials-table > tbody > tr > td {
+	padding: 0.5rem;
+	vertical-align: middle;
+	overflow: hidden;
+
+	&:nth-child(1) {
+		width: 12%;
+	}
+	&:nth-child(2) {
+		width: 6.5%;
+	}
+	&:nth-child(3) {
+		width: 6.5%;
+	}
+	&:nth-child(4) {
+		width: 6.5%;
+	}
+	&:nth-child(5) {
+		width: 6.5%;
+	}
+	&:nth-child(6) {
+		width: 6.5%;
+	}
+	&:nth-child(7) {
+		width: 6.5%;
+	}
+	&:nth-child(8) {
+		width: 6%;
+	}
+	&:nth-child(9) {
+		width: 8%;
+	}
+	&:nth-child(10) {
+		width: 5%;
+	}
+	&:nth-child(11) {
+		width: 5%;
+	}
+	&:nth-child(12) {
+		width: 6%;
+	}
+	&:nth-child(13) {
+		width: 13%;
+	}
+	&:nth-child(14) {
+		width: 6%;
+	}
+}
+
+.materials-materials, .materials-accessories {
+	height: 61vh;
+	// overflow: scroll;
+}
+
+.materials-table .last, .accessories-table .last {
+	background-color: transparent;
+	border: none;
+}
+
+.materials-table .filler, .accessories-table .filler {
+	height: 3vh;
+	padding: 0;
+
+	&.line {
+		border-bottom: 2px solid #B4B4B4;
+	}
+
+	td {
+		border: none;
+	}
+}
+
+.materials-table td input {
+	height: 3rem;
+	background-color: @lightest-grey;
+	border: none;
+	width: 100%;
+	padding: 0px;
+
+	&:focus {
+		outline: none;
+	}
+}
+
+.materials-table td input[type="date"], .accessories-table td input[type="date"] {
+	width: 170%;
+}
+
+.materials-table td, .accessories-table td {
+	border-bottom: none;
+}
+
+.materials-autocomplete {
+	position: absolute;
+	background-color: white;
+	width: inherit;
+	list-style: none;
+	padding: 0;
+
+	li {
+		padding: 1rem;
+		cursor: pointer;
+	}
+
+	.material-item {
+		&:hover {
+			background-color: @light-grey;
+		}
+	}
+}
+
+.materials-table .icon-oas, .accessories-table .icon-oas {
+	width: 2rem;
+	height: auto;
+}
+
+.new-material-row, .new-accessory-row {
+	td {
+		border: 1px solid @white;
+	}
+}
+
+.material-cost-list {
+	padding: 0 !important;
+	border-top: none !important;
+
+	table {
+		table-layout: fixed;
+		background-color: transparent !important;
+	}
+
+	.table-container {
+		width: 100%;
+		height: 49vh;
+		overflow: scroll;
+	}
+
+	.last {
+		background-color: transparent;
+		border: none;
+	}
+
+	td {
+		// background-color: @white;
+		border-top: none !important;
+		padding: 0.5rem !important;
+		border-left: 1px solid #c4c4c4;
+		border-bottom: 1px solid #c4c4c4;
+		vertical-align: middle;
+		overflow: hidden;
+
+		&:nth-child(1) {
+			width: 11.5%;
+		}
+		&:nth-child(2) {
+			width: 6.5%;
+		}
+		&:nth-child(3) {
+			width: 6.5%;
+		}
+		&:nth-child(4) {
+			width: 6.5%;
+		}
+		&:nth-child(5) {
+			width: 6.5%;
+		}
+		&:nth-child(6) {
+			width: 6.5%;
+		}
+		&:nth-child(7) {
+			width: 6.5%;
+		}
+		&:nth-child(8) {
+			width: 6.5%;
+		}
+		&:nth-child(9) {
+			width: 5.5%;
+		}
+		&:nth-child(10) {
+			width: 5%;
+		}
+		&:nth-child(11) {
+			width: 5%;
+		}
+		&:nth-child(12) {
+			width: 5.5%;
+		}
+		&:nth-child(13) {
+			width: 10%;
+		}
+		&:nth-child(14) {
+			width: 5.5%;
+		}
+
+		// input:disabled {
+		// 	background-color: #FFF;
+		// }
+	}
+}
+
+.accessory-cost-list {
+	padding: 0 !important;
+	border-top: none !important;
+
+	table {
+		table-layout: fixed;
+		background-color: transparent !important;
+	}
+
+	.table-container {
+		width: 100%;
+		height: 49vh;
+		overflow: scroll;
+	}
+
+	.last {
+		background-color: transparent;
+		border: none;
+	}
+
+	td {
+		// background-color: @white;
+		border-top: none !important;
+		padding: 0.5rem !important;
+		border-left: 1px solid #c4c4c4;
+		border-bottom: 1px solid #c4c4c4;
+		vertical-align: middle;
+		overflow: hidden;
+
+		// &:first-child {
+		// 	border-left: none;
+		// }
+
+		&:nth-child(1) {
+			width: 9%;
+		}
+		&:nth-child(2) {
+			width: 13.5%;
+		}
+		&:nth-child(3) {
+			width: 10%;
+		}
+		&:nth-child(4) {
+			width: 10%;
+		}
+		&:nth-child(5) {
+			width: 10%;
+		}
+		&:nth-child(6) {
+			width: 10%;
+		}
+		&:nth-child(7) {
+			width: 10%;
+		}
+		&:nth-child(8) {
+			width: 21.5%;
+		}
+		&:nth-child(9) {
+			width: 6%;
+		}
+
+		// input:disabled {
+		// // input:disabled, textarea:disabled {
+		// 	background-color: #FFF;
+		// }
+	}
+}
+
+.accessories-table > thead > tr > th {
+	padding: 1rem;
+	vertical-align: middle;
+	border: 2px solid #dddddd;
+	background-color: #333;
+	text-align: center;
+
+	&:nth-child(1) {
+		width: 9%;
+	}
+	&:nth-child(2) {
+		width: 13.5%;
+	}
+	&:nth-child(3) {
+		width: 10%;
+	}
+	&:nth-child(4) {
+		width: 10%;
+	}
+	&:nth-child(5) {
+		width: 10%;
+	}
+	&:nth-child(6) {
+		width: 10%;
+	}
+	&:nth-child(7) {
+		width: 10%;
+	}
+	&:nth-child(8) {
+		width: 21.5%;
+	}
+	&:nth-child(9) {
+		width: 6%;
+	}
+}
+
+.accessories-table > tbody > tr > td {
+	padding: 0.5rem;
+	vertical-align: middle;
+	overflow: hidden;
+
+	&:nth-child(1) {
+		width: 9%;
+	}
+	&:nth-child(2) {
+		width: 13.5%;
+	}
+	&:nth-child(3) {
+		width: 10%;
+	}
+	&:nth-child(4) {
+		width: 10%;
+	}
+	&:nth-child(5) {
+		width: 10%;
+	}
+	&:nth-child(6) {
+		width: 10%;
+	}
+	&:nth-child(7) {
+		width: 10%;
+	}
+	&:nth-child(8) {
+		width: 21.5%;
+	}
+	&:nth-child(9) {
+		width: 6%;
+	}
+}
+
+.accessories-table td input {
+	width: 100%;
+	height: 100%;
+	background-color: @lightest-grey;
+	border: none;
+	padding: 0;
+	// padding: 0 5px 0 5px;
+
+	&:focus {
+		outline: none;
+	}
+}
+
+.accessories-table td textarea {
+	width: 100%;
+	height: 100%;
+	border: none;
+	vertical-align: middle;
+	padding: 0 0.5rem;
+	// padding: 0 5px 0 5px;
+	resize: none;
+
+	&:focus {
+		outline: none;
+	}
+}
+
+.costsummary-modal {
+	.table-container {
+		height: 60vh;
+		overflow: scroll;
+	}
+
+	th {
+		background-color: #333;
+	}
+}
